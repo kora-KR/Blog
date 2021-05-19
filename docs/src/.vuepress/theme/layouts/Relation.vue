@@ -23,12 +23,12 @@
 </template>
 
 <script>
-import { defineComponent, getCurrentInstance, reactive } from 'vue-demi';
+import { defineComponent, getCurrentInstance, reactive, onMounted } from 'vue-demi';
 import Common from '@theme/components/Common';
 import { ModuleTransition } from '@vuepress-reco/core/lib/components';
 import moduleTransitonMixin from '@theme/mixins/moduleTransiton';
-import '@theme/helpers/canvasPopular2.js';
-import '@theme/helpers/canvasPopular.js';
+// import '@theme/helpers/canvasPopular2.js';
+// import '@theme/helpers/canvasPopular.js';
 
 export default defineComponent({
     name: 'TimeLine',
@@ -67,6 +67,11 @@ export default defineComponent({
             const day = dateObj.getDate();
             return `${mon}-${day}`;
         };
+        onMounted(() => {
+            import('@theme/helpers/canvasPopular2.js').then((res) => {
+                import('@theme/helpers/canvasPopular.js');
+            });
+        });
 
         return { go, moreI, dateFormat, relationList, RelationMoreShow };
     },
