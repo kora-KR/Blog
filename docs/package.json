@@ -1,0 +1,29 @@
+{
+    "name": "newBlog2",
+    "version": "0.0.1",
+    "description": "路遙知馬力，日久見人心",
+    "main": "index.js",
+    "authors": {
+        "name": "",
+        "email": ""
+    },
+    "repository": "/newBlog2",
+    "scripts": {
+        "dev": "vuepress dev src",
+        "src:dev": "vuepress dev src --temp .temp",
+        "build": "vuepress build src"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "vuepress": "^1.5.3",
+        "vuepress-plugin-dynamic-title": "^1.0.0",
+        "vuepress-plugin-meting": "^0.2.3",
+        "vuepress-theme-reco": "^1.6.6"
+    },
+    "dependencies": {
+        "@vuepress-reco/vuepress-plugin-kan-ban-niang": "^1.0.5",
+        "@vuepress-reco/vuepress-plugin-pagation": "^1.6.0",
+        "vue-canvas-effect": "0.0.12",
+        "vuepress-plugin-comment": "^0.7.3"
+    }
+}
