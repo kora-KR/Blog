@@ -10,8 +10,11 @@
             </aside>
             <aside :class="[{ hover_aside: RelationMoreShow }]">
                 <section>
-                    <h2>{{ relationList[moreI && 0].val }}</h2>
-                    <main>
+                    <h2>
+                        {{ `${moreI >= 0 && relationList[moreI].val}` }}
+                        <span>（微信搜索试试）</span>
+                    </h2>
+                    <main id="scroll">
                         <img :src="require('../images/admin/relation' + (moreI >= 0 ? moreI : 0) + '.jpg')" alt="" />
                         <img class="small" v-if="moreI == 1" src="../images/admin/YAF.jpg" alt="" />
                     </main>
@@ -84,6 +87,7 @@ export default defineComponent({
             }
             this.moreI = i;
             this.RelationMoreShow = true;
+            window.document.getElementById('scroll').scrollTop = 0;
         },
     },
 });
@@ -117,7 +121,9 @@ Y = 30
 		}
 		&:nth-of-type(2){ margin-left: -300px; z-index: -1; width: 300px; height: calc(50vh + 40px); box-shadow: 0 1px 8px  rgba(0, 0, 0, .3); border-radius: 8px; overflow: hidden;
 			section{
-				h2{margin: 0!important; padding: 10px ; font-size: 14px; text-align: center; border-bottom: 2px solid #eee}
+				h2{margin: 0!important; padding: 10px ; font-size: 14px; text-align: center; border-bottom: 2px solid #eee;
+					span{font-size: 10px}
+				}
 				main{height: calc(50vh + 3px); overflow-y: scroll; overflow-x: hidden;
 					img{display: block; margin: 0 auto; width: 300px; height auto}
 				}
