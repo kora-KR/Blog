@@ -1,22 +1,22 @@
 <template>
-  <aside class="sidebar">
-    <slot name="top"/>
-    <NavLinks/>
-    <SidebarLinks :depth="0" :items="items"/>
-    <slot name="bottom"/>
-  </aside>
+    <aside class="sidebar">
+        <slot name="top" />
+        <NavLinks />
+        <SidebarLinks :depth="0" :items="items" />
+        <slot name="bottom" />
+    </aside>
 </template>
 
 <script>
-import { defineComponent } from 'vue-demi'
-import SidebarLinks from '@theme/components/SidebarLinks'
-import NavLinks from '@theme/components/NavLinks'
+import { defineComponent } from 'vue-demi';
+import SidebarLinks from '@theme/components/SidebarLinks';
+import NavLinks from '@theme/components/NavLinks';
 
 export default defineComponent({
-  name: 'Sidebar',
-  components: { SidebarLinks, NavLinks },
-  props: ['items']
-})
+    name: 'Sidebar',
+    components: { SidebarLinks, NavLinks },
+    props: ['items'],
+});
 </script>
 
 <style lang="stylus">

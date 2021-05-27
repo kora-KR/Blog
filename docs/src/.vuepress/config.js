@@ -81,9 +81,44 @@ module.exports = {
 			{ text: '关于我', link: '/about/', icon: 'reco-account' }
 		],
 		sidebar: {
+			// 多分组维护
 			'/guide/': [
 				{
-					title: 'Guide',
+					title: '开发规范',
+					collapsable: false,
+					children: [
+						{
+							title: '前端规范', path: '', collapsable: false,
+							children: [
+								{ title: 'V1.0.1', path: 'font/font1.0.1' },
+								{ title: 'V1.1.1', path: 'font/font1.1.1' },
+							]
+						},
+						{
+							title: '后台规范', path: '', collapsable: false,
+							children: [
+								{ title: 'V1.0.1', path: 'back/back1.0.1' },
+							]
+						},
+						{
+							title: 'Git规范', path: '', collapsable: false,
+							children: [
+								{ title: '项目规范', path: 'git/platform' },
+								{ title: '框架规范', path: 'git/frame' }
+							]
+						},
+						{
+							title: '版本号规范', path: '', collapsable: false,
+							children: [
+								{ title: '版本规范', path: 'version/version' },
+							]
+						},
+					]
+				}
+			],
+			'/config/': [
+				{
+					title: '技术文档',
 					collapsable: false,
 					children: [
 						'',
@@ -195,7 +230,7 @@ module.exports = {
 			"dynamic-title",
 			{
 				showIcon: "/images/KR.png",
-				showText: "Kora",
+				showText: "RUN",
 				hideIcon: "/images/KR.png",
 				hideText: "(●—●)不要走啊，再看看！",
 				recoverTime: 2000
@@ -207,7 +242,7 @@ module.exports = {
 			{
 			}
 		],
-		// 评论
+		// 评论 全局引入 - 禁止所有页面展示，Valine.vue单独引用
 		[
 			'vuepress-plugin-comment',
 			{

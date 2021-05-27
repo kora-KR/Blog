@@ -50,7 +50,7 @@ export default defineComponent({
         const showAccessNumber = computed(() => {
             const {
                 $themeConfig: { valineConfig },
-                $themeLocaleConfig: { valineConfig: valineLocalConfig },
+                $themeLocaleConfig: { Config: valineLocalConfig },
             } = instance;
 
             const vc = valineLocalConfig || valineConfig;

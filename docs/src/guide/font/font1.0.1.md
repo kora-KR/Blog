@@ -1,4 +1,4 @@
-# 汇总开发规范(VUE1.1.1)
+# 前端开发规范(VUE1.0.1)
 
 > 适用人群：了解基础 W3C 规则，了解基础 VUE 规则
 
@@ -101,7 +101,7 @@ function numberLimit(key) {
     		},
     		mounted() {},
     		methods: {},
-			beforeRouteLeave(to, from) { },
+    		beforeRouteLeave(to, from) { },
     	}
     	</script>
     	// css
@@ -228,109 +228,7 @@ var userName = 'kora';
 **/
 ```
 
-### 1.5.3 script 注释
-
-    1.尽可能多用单行注释，注释需要与被注释的地方对齐
-    2.生命周期created()、mounted()下的所有方法调用需要单独注释，methods里面涉及接口调用的方法一定要注释，filters里面的过滤器需要注释说明功能
-
-## 1.6 js 代码编写规范
-
-    1.函数/方法，要添加功能注释
-    2.函数/方法要保持功能单一，一个方法只做一件事情，复杂的功能要进行拆分
-    3.来自于接口返回的数据，和来自于本地存储的数据使用之前要做容错处理，保证程序健壮性
-    4.Switch…case使用在至少有三个判断值,case不可省,每次case必须用break跳出
-    5.在一票否决的情况下，可以采用写法如if(x)return 减少代码块嵌套深度
-    6.除了三目运算，if,else 等禁止简写
-
-## 1.7 指令规范
-
-### 1.7.1 指令有缩写一律采用缩写形式
-
-```js
-// 错误示例
-
-v-bind:class="{'show-left'：true}"
-v-on:click="getListData"
-
-//  good
-
-:class="{'show-left'：true}"
-@click="getListData"
-```
-
-### v-for 循环必须加上 key 属性，在整个 for 循环中 key 需要唯一
-
-```html
-<!--  错误示例  -->
-
-<ul>
-    <li v-for="todo in todos">
-        {{ todo.text }}
-    </li>
-</ul>
-
-<!--  good  -->
-
-<ul>
-    <li v-for="todo in todos" :key="todo.id">
-        {{ todo.text }}
-    </li>
-</ul>
-```
-
-### 避免 v-if 和 v-for 同时用在一个元素上（性能问题）
-
-以下为两种解决方案：
-
-将数据替换为一个计算属性，让其返回过滤后的列表
-
-```html
-<!--  错误示例  -->
-
-<ul>
-    <li v-for="user in users" v-if="user.isActive" :key="user.id">
-        {{ user.name }}
-    </li>
-</ul>
-
-<!--   good -->
-
-<ul>
-    <li v-for="user in activeUsers" :key="user.id">
-        {{ user.name }}
-    </li>
-</ul>
-
-<script>
-
-    computed: {
-      activeUsers: function () {
-        return this.users.filter(function (user) {
-          return user.isActive
-        })
-      }
-    }
-</script>
-```
-
-### 将 v-if 移动至容器元素上 (比如 ul, ol)
-
-<!--  错误示例  -->
-
-<ul>
-<li v-for="user in users" v-if="shouldShowUsers" :key="user.id">
-	{{ user.name }}
-</li>
-</ul>
-
-<!-- good -->
-<ul v-if="shouldShowUsers">
-    <li v-for="user in users" :key="user.id">
-        {{ user.name }}
-    </li>
-</ul>
-
-## 1.8 项目目录解析
+## 1.6 项目目录解析
 
 ┌─public 静态目录（其资源会复制到打包输出文件根目录中[dist]）
 │ └─security ns-国密封装控件

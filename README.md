@@ -13,6 +13,11 @@
 
     ② 命令行执行.deploy.sh
 
+## 维护主体页面
+
+1. 创建自定义文件目录：建议 docs\src\.vuepress\theme\layouts
+2. 维护自定义页面索引：docs\src\.vuepress\theme\index.js
+
 ## 外部插件
 
 1. `网易音乐播放`:

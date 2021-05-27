@@ -1,6 +1,6 @@
 <template>
     <div class="theme-container" :class="pageClasses">
-        <!-- kora - 增加动画 -->
+        <!-- kora - 增加全局背景图 -->
         <section class="banner" :style="[{ background: '#eee url(' + require('../images/banner/0.jpg') + ') center center / cover no-repeat', height: fullScreen ? '100vh' : '340px', opacity: hide ? 0 : 1 }]"></section>
 
         <div v-if="!absoluteEncryption">
