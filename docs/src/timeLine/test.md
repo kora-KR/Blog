@@ -1,10 +1,16 @@
 ---
-title: 【vue】跨域解决方案之proxyTable
-date: 2017-12-28
-author: Kora
-tags:
-    - vue
-    - webpack
+sidebar: auto
+group: test
 ---
 
-測試文本
+# Config
+
+## foo
+
+-   Type: `string`
+-   Default: `/`
+
+## bar
+
+-   Type: `string`
+-   Default: `/`

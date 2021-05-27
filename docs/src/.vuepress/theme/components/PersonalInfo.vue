@@ -1,6 +1,10 @@
 <template>
     <div :class="['personal-info-wrapper', { 'personal-info-wrapper-add': 0 }]">
-        <img class="personal-img" v-if="$themeConfig.authorAvatar" :src="$withBase($themeConfig.authorAvatar)" alt="author-avatar" />
+        <!-- 原代码展示 -->
+        <!-- <img class="personal-img" v-if="$themeConfig.authorAvatar" :src="$withBase($themeConfig.authorAvatar)" alt="author-avatar" /> -->
+        <div class="personal-img" v-if="$themeConfig.authorAvatar">
+            <img v-if="$themeConfig.authorAvatar" :src="$withBase($themeConfig.authorAvatar)" alt="author-avatar" />
+        </div>
         <h3 class="name" v-if="$themeConfig.author" :style="[{ color: from == 'about' ? '#fff' : '' }]">{{ $themeConfig.author }}</h3>
         <div class="num">
             <div>
@@ -52,11 +56,29 @@ export default defineComponent({
 .personal-info-wrapper {
   .personal-img {
     display block
-    margin 2rem auto 1rem
-    width 6rem
-    height 6rem
-	border-radius 4px;
-    box-shadow var(--box-shadow)
+    margin 2rem auto 1.5rem
+    width 50px
+    height 50px
+	position relative;
+	&::before{
+        content: '';
+        height: 8px; width: 50px; background: #000; opacity: .2; border-radius: 50%;
+        position: absolute;
+        top: 67px;
+        left: 0;
+        animation: shadow .5s linear infinite;
+    }
+	& >img{
+		border-radius: 5px;
+		animation: rotate .8s linear infinite;
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+    	box-shadow var(--box-shadow)
+		width: 55px;
+		height: auto;
+	}
   }
   &-add{background: #900}
   .name {
@@ -110,5 +132,29 @@ export default defineComponent({
       }
     }
   }
+}
+
+@keyframes shadow {
+    0%, 100% {transform: scaleX(1);}
+    50% {transform: scaleX(1.2);}
+}
+
+@keyframes rotate {
+    0% {
+    transform: translateY(0) ;
+  }
+    25% {
+        transform: translateY(10px);
+    }
+    50% {
+        transform: translateY(20px) scale(1.1, 0.9);
+
+    }
+    75% {
+        ransform: translateY(10px) ;
+    }
+    100% {
+        transform: translateY(0) ;
+    }
 }
 </style>

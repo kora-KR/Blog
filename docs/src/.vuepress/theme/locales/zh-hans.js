@@ -5,5 +5,5 @@ export default {
   category: '分类',
   friendLink: '友情链接',
   timeLine: '时间轴',
-  timeLineMsg: '昨日重现！'
+  timeLineMsg: '为中华之崛起！'
 }

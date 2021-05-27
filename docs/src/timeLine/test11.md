@@ -1,6 +1,6 @@
 ---
 sidebar: auto
-group: test3
+group: test11
 ---
 
 # Config

@@ -103,7 +103,7 @@ module.exports = {
 						{
 							title: 'Git规范', path: '', collapsable: false,
 							children: [
-								{ title: '项目规范', path: 'git/platform' },
+								{ title: '项目规范', path: 'git/project' },
 								{ title: '框架规范', path: 'git/frame' }
 							]
 						},
@@ -158,7 +158,7 @@ module.exports = {
 			{
 				title: 'vuepress-theme-reco',
 				desc: 'A simple and beautiful vuepress Blog & Doc theme.',
-				logo: "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
+				logo: "https://i.loli.net/2020/01/13/TPKA1wp6s4ufSm2.png",
 				link: 'https://vuepress-theme-reco.recoluan.com'
 			},
 			{
@@ -182,6 +182,8 @@ module.exports = {
 	 * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
 	 */
 	plugins: [
+		// 流程图
+		'flowchart',
 		'@vuepress/plugin-back-to-top',
 		'@vuepress/plugin-medium-zoom',
 		// 音乐播放器

@@ -1,7 +1,7 @@
 ---
 title: 开发规范
-des: git 规范（框架）
-date: 2021-05-26
+des: git规范（项目）
+date: 2021-05-27
 author: Kora
 tags:
     - git
@@ -9,4 +9,4 @@ tags:
 group: specification
 ---
 
-# 框架规范
+# 项目规范

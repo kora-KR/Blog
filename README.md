@@ -13,10 +13,16 @@
 
     ② 命令行执行.deploy.sh
 
-## 维护主体页面
+## 维护管理
 
-1. 创建自定义文件目录：建议 docs\src\.vuepress\theme\layouts
-2. 维护自定义页面索引：docs\src\.vuepress\theme\index.js
+1. 维护新路由
+
+-   创建自定义文件目录：建议 docs\src\.vuepress\theme\layouts
+-   维护自定义页面索引：docs\src\.vuepress\theme\index.js
+
+2. 维护文章集合
+
+-   文本内需设置 Grop 标识，遵循唯一性、语义化
 
 ## 外部插件
 

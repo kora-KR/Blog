@@ -6,10 +6,10 @@ sidebar: auto
 
 ## foo
 
-- Type: `string`
-- Default: `/`
+-   Type: `string`
+-   Default: `/`
 
 ## bar
 
-- Type: `string`
-- Default: `/`
+-   Type: `string`
+-   Default: `/`

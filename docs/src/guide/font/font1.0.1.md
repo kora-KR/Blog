@@ -1,6 +1,17 @@
+---
+title: 开发规范
+des: 前端规范1.0.1
+date: 2021-05-28
+author: Kora
+tags:
+    - vue
+    - 规范
+group: specification
+---
+
 # 前端开发规范(VUE1.0.1)
 
-> 适用人群：了解基础 W3C 规则，了解基础 VUE 规则
+> 适用人群：了解基础 W3C 规则，了 解基础 VUE 规则
 
 ## 1.1 规范目的
 

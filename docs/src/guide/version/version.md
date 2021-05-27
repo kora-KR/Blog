@@ -1,3 +1,14 @@
+---
+title: 开发规范
+des: 版本规范
+date: 2021-05-26
+author: Kora
+tags:
+    - 版本号
+    - 规范
+group: specification
+---
+
 # 项目版本规范
 
 ## 关于版本号
