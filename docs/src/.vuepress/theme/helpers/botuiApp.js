@@ -8,7 +8,7 @@ export default function initBotApp() {
 	let botui = BotUI('kora-botui', { vue: Vue })
 	botui.message.add({ delay: 800, content: "Hi, there👋" })
 		.then(function () {
-			botui.message.add({ delay: 1100, content: "很高兴认识你们" })
+			botui.message.add({ delay: 1100, content: "很高兴认识你" })
 				.then(function () {
 					botui.message.add({ delay: 1100, content: "我一个无聊的男孩子~" })
 						.then(() => {

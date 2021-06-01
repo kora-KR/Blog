@@ -369,3 +369,9 @@ v-on:click="getListData"
 ├─babel.config.js https://cli.vuejs.org/zh/config/#pluginoptions
 ├─package/package.lock.json npm 包环境配置文件  
 └─vue.config.js webpack 辅助配置文件
+
+## 1.9 项目规范
+
+### 1.9.1 同比交易有效性，通用报文接口添加（如 traceID 标识，建议命名：项目标识 + 年月日 + 时分秒 + 时间戳 + 随机数）
+
+### 1.9.2 用户鉴权（同页面多逻辑需多路由，便于后续鉴权）
