@@ -116,13 +116,51 @@ module.exports = {
 					]
 				}
 			],
-			'/config/': [
+			'/stylus/': [
 				{
-					title: '技术文档',
+					title: '样式扩展',
 					collapsable: false,
 					children: [
-						'',
-						'using-vue',
+						{
+							title: 'W3C标准', path: '', collapsable: false,
+							children: [
+								{ title: 'css', path: 'css/css' },
+							]
+						},
+						{
+							title: '拓展语言', path: '', collapsable: false,
+							children: [
+								{ title: 'less', path: 'less/less' },
+								{ title: 'stylus', path: 'stylus/stylus' },
+								{ title: 'scss/sass', path: 'scss/scss' },
+							]
+						}
+					]
+				}
+			],
+			'/platform/': [
+				{
+					title: '平台化开发',
+					collapsable: false,
+					children: [
+						{
+							title: '脚手架', path: '', collapsable: false,
+							children: [
+								{ title: 'CLI', path: 'cli/cli' },
+							]
+						},
+						{
+							title: '私服', path: '', collapsable: false,
+							children: [
+								{ title: 'privateServe', path: 'privateServe/privateServe' },
+							]
+						},
+						{
+							title: '平台', path: '', collapsable: false,
+							children: [
+								{ title: 'platform', path: 'platform/platform' },
+							]
+						},
 					]
 				}
 			],

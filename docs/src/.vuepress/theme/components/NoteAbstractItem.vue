@@ -3,6 +3,7 @@
         <svg>
             <rect id="shape" height="232" width="811"></rect>
         </svg>
+        <reco-icon v-if="currentPage == 1 && index < 3" icon="iconfont reco-sticky" style="font-size: 33px" />
         <article v-if="index % 2 == 0" class="abstract-item_left">
             <main>
                 <section :style="[{ background: '#eee url(' + require('../images/banner/0.jpg') + ') center center / cover no-repeat' }]"></section>

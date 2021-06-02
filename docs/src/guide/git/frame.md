@@ -20,13 +20,10 @@ group: specification
 </template>
 
 <script>
-import mindmap from '@hellowuxin/mindmap';
 
 export default {
   name: 'App',
-  components: {
-    mindmap
-  },
+  components: {},
   data: () => ({
 		datas: [{
 			"name":"Git",

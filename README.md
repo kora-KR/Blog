@@ -54,6 +54,35 @@
 
 1. `vuepressReco`：[vuepressReco](https://vuepress-theme-reco.recoluan.com/)
 
+## 路由解析
+
+    - docs/frame:  框架整理
+    	- vue: vue集合
+    	- uni: uni集合
+    	- ionic: ionic集合
+    	- weChart: 原生小程序集合
+    	...
+
+    - docs/stylus: 关于样式整理
+
+    - docs/platform: 关于平台整理
+    	> 前端平台共分为三大模块
+    		1. 平台：可视化、可操作演示模板，其中包含私服插件 md 说明与演示，可细分为三大模块(组件、方法、小工具)
+    		2. 脚手架：node 环境配置全局 HHXCli，实现命令行式快速项目搭建，目前支持 vue、uniapp、ionic 三方主流框架
+    		3. NPM 私服：公司内部服务搭建私有组件库，提升安装、开发效率，保护非开源组件私有化
+
+    	> 其中脚手架 HHXCli 已集成基础方法（如时间管理器、接口 API、crypto 加解密、缓存等），对于项目新手可实现搭建即可快速开发
+
+    	> 三大主模块结合代码规范文档与 eslint 代码检测工具对于开发成本、交接成本与维护成本起到本质性减耗作用，其中脚手架与私服的更新迭代均会在平台进行同步展示，实现三方规范化整合。
+
+    - docs/it:     关于零散技术整理
+
+    - docs/guide:  关于代码规范整理
+
+    - docs/essay:  关于生活随笔整理
+
+    - docs/experience: 关于开发心得整理
+
 ## 目录结构解析
 
 ┌─.temp 热启动备份文件

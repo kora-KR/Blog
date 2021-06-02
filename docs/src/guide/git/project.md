@@ -26,14 +26,12 @@ export default {
 			const fittingString = (str, maxWidth, fontSize) => {
 				let currentWidth = 0;
 				let res = str;
-				const pattern = new RegExp('[\u4E00-\u9FA5]+'); // distinguish the Chinese charactors and letters
+				const pattern = new RegExp('[\u4E00-\u9FA5]+');
 				str.split('').forEach((letter, i) => {
 					if (currentWidth > maxWidth) return;
 					if (pattern.test(letter)) {
-						// Chinese charactors
 						currentWidth += fontSize;
 					} else {
-						// get the width of single letter according to the fontSize
 						currentWidth += G6.Util.getLetterWidth(letter, fontSize);
 					}
 					if (currentWidth > maxWidth) {
@@ -47,12 +45,8 @@ export default {
 
 		G6.registerEdge('circle-running', {
 			afterDraw(cfg, group) {
-			// get the first shape in the group, it is the edge's path here=
 			const shape = group.get('children')[0];
-			// the start position of the edge's path
 			const startPoint = shape.getPoint(0);
-
-			// add red circle shape
 			const circle = group.addShape('circle', {
 				attrs: {
 					x: startPoint.x,
@@ -63,12 +57,8 @@ export default {
 				name: 'circle-shape',
 			});
 
-			// animation for the red circle
 			circle.animate((ratio) => {
-				// the operations in each frame. Ratio ranges from 0 to 1 indicating the prograss of the animation. Returns the modified configurations
-				// get the position on the edge according to the ratio
 				const tmpPoint = shape.getPoint(ratio);
-				// returns the modified configurations here, x and y here
 				return {
 					x: tmpPoint.x,
 					y: tmpPoint.y,

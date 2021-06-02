@@ -47,6 +47,7 @@ export default defineComponent({
     components: { RecoIcon },
     setup(props, ctx) {
         const instance = getCurrentInstance().proxy;
+        var x = 1;
         const showAccessNumber = computed(() => {
             const {
                 $themeConfig: { valineConfig },
