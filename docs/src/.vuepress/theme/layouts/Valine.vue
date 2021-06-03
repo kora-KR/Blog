@@ -126,6 +126,7 @@ export default defineComponent({
 
 <style lang="stylus" scoped>
 @require '../styles/wrapper.styl'
+/deep/ .v p{color: #fff!important}
 
 .timeline-wrapper
   max-width: $contentWidth;

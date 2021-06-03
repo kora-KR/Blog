@@ -57,9 +57,11 @@ export default defineComponent({
 
 <style lang="stylus" scoped>
 .botui-app-container
- width 70%;
+ margin 0 auto
+ width 80%;
  height 340px;
  padding 2px 6px 4px 6px;
+ border-radius 10px
  background-color rgba(242, 242, 242, 0.5)
 
 .tags-wrapper
