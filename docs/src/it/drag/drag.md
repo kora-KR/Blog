@@ -37,3 +37,27 @@ group: itDrag
 > 7. 创建组件命名需包含关键字 Hhx、kora，如 HhxSwiper、KoraBtn
 
 > ... 未完待续
+
+## 1.4 Drag 源码获取
+
+<template>
+  <div id="app">
+		<authentication>
+			<section style='color: #7C94A6'>
+				十分抱歉，由于私服安全性，无法直接对外开放源码；
+				可联系开发人员获取详细资料！
+			</section>
+		</authentication>
+  </div>
+</template>
+
+<script>
+import authentication from '../../components/authentication.vue';
+export default {
+  name: 'App',
+  components: {authentication},
+  data: () => ({})
+}
+</script>
+<style lang='css'>
+</style>
