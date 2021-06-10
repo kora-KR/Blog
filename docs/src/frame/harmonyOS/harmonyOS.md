@@ -139,3 +139,18 @@ router.push({
 ## attach（debug 模式）
 
 > 不影响项目运行记录 debug 位置
+
+## 网络请求权限配置
+
+### 配置位置
+
+> /entry/src/config.json
+
+### 配置属性
+
+> "reqPermissions": [
+
+      {"name": "ohos.permission.INTERNET"},
+      {"name": "ohos.permission.GET_NETWORK_INFO"},
+      {"name": "ohos.permission.SET_NETWORK_INFO"}
+    ],
