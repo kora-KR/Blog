@@ -9,9 +9,9 @@
 3. `打包`：npm run build
 4. `更新线上版本`：
 
-    ① npm run build -> git 提交(地址：git@github.com:kora-KR/kora-kr.github.io.git)
+    ① 手动提交：npm run build -> git 提交(地址：git@github.com:kora-KR/kora-kr.github.io.git)
 
-    ② 命令行执行.deploy.sh
+    ② 命令行提价: sh deploy.sh <commit message>
 
 ## 维护管理
 
