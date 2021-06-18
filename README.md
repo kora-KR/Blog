@@ -11,7 +11,7 @@
 
     ① 手动提交：npm run build -> git 提交(地址：git@github.com:kora-KR/kora-kr.github.io.git)
 
-    ② 命令行提价: sh deploy.sh <commit message>
+    ② 脚本提交: sh deploy.sh <commit message>
 
 ## 维护管理
 
