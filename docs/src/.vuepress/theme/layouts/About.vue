@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+    <div class="about">
         <Common class="tags-wrapper" :sidebar="false" :fullScreen="false" :hide="false">
             <!-- <bubbles-effect :options="options"></bubbles-effect> -->
             <!-- 个人简介 -->
@@ -56,13 +56,15 @@ export default defineComponent({
 <style src="../styles/theme.styl" lang="stylus"></style>
 
 <style lang="stylus" scoped>
+
 .botui-app-container
- margin 0 auto
+ margin 25px auto
  width 80%;
  height 340px;
- padding 2px 6px 4px 6px;
- border-radius 10px
+ padding 6px;
+ border-radius 2px
  background-color rgba(242, 242, 242, 0.5)
+ box-shadow 2px 2px 10px rgba(0,0,0,.2)
 
 .tags-wrapper
   max-width: $contentWidth

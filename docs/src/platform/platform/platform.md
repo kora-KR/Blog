@@ -1,5 +1,5 @@
 ---
-title: 平台
+title: 平台 - 一体化开发
 des: 平台三原色
 date: 2021-06-01
 author: Kora

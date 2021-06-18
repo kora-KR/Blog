@@ -164,6 +164,25 @@ module.exports = {
 					]
 				}
 			],
+			'/frame/': [{
+				title: '框架',
+				collapsable: false,
+				children: [
+					{
+						title: '多端开发', path: '', collapsable: false,
+						children: [
+							{ title: 'uniApp', path: 'uniapp/uniapp' },
+						]
+					},
+					{
+						title: '原生语言', path: '', collapsable: false,
+						children: [
+							{ title: 'harmony', path: 'harmonyOS/harmonyOS' }
+						]
+					}
+				]
+			}
+			]
 		},
 		// 博客配置
 		blogConfig: {

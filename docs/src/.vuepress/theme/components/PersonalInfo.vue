@@ -5,15 +5,21 @@
         <div class="personal-img" v-if="$themeConfig.authorAvatar">
             <img v-if="$themeConfig.authorAvatar" :src="$withBase($themeConfig.authorAvatar)" alt="author-avatar" />
         </div>
-        <h3 class="name" v-if="$themeConfig.author" :style="[{ color: from == 'about' ? '#fff' : '' }]">{{ $themeConfig.author }}</h3>
+        <h3 class="name" v-if="$themeConfig.author" :style="[{ color: from == 'about' ? '#fff' : '' }]">
+            {{ $themeConfig.author }}
+        </h3>
         <div class="num">
             <div>
-                <h3 :style="[{ color: from == 'about' ? '#fff' : '' }]">{{ $recoPosts.length }}</h3>
-                <h6 :style="[{ color: from == 'about' ? '#fff' : '' }]">{{ $recoLocales.article }}</h6>
+                <router-link :to="'/'" class="home-link">
+                    <h3 :style="[{ color: from == 'about' ? '#fff' : '' }]">{{ $recoPosts.length }}</h3>
+                    <h6 :style="[{ color: from == 'about' ? '#fff' : '' }]">{{ $recoLocales.article }}</h6>
+                </router-link>
             </div>
             <div>
-                <h3 :style="[{ color: from == 'about' ? '#fff' : '' }]">{{ $tags.list.length }}</h3>
-                <h6 :style="[{ color: from == 'about' ? '#fff' : '' }]">{{ $recoLocales.tag }}</h6>
+                <router-link :to="'/tag'" class="home-link">
+                    <h3 :style="[{ color: from == 'about' ? '#fff' : '' }]">{{ $tags.list.length }}</h3>
+                    <h6 :style="[{ color: from == 'about' ? '#fff' : '' }]">{{ $recoLocales.tag }}</h6>
+                </router-link>
             </div>
         </div>
         <ul class="social-links">
@@ -90,11 +96,15 @@ export default defineComponent({
     display flex
     margin 0 auto 1rem
     width 80%
-    > div {
+	cursor pointer;
+    > div {position: relative;
+		&:hover{
+			h3, h6{color: #999!important; font-weight bold}
+		}
       text-align center
       flex 0 0 50%
       &:first-child {
-        border-right 1px solid #333
+		  &:after{content: ''; position: absolute; top: 50%; right: 0; transform: translateY(-50%) scale(.5); width: 4px; height: 100%; background: #999; border-radius: 10px}
       }
       h3 {
         line-height auto
@@ -117,6 +127,7 @@ export default defineComponent({
     flex-wrap wrap
     padding 10px
     .social-item {
+	  position relative;
       width 39px
       height 36px
       line-height 36px
@@ -124,7 +135,7 @@ export default defineComponent({
       list-style none
       transition transform .3s
       &:hover {
-        transform scale(1.08)
+        transform scale(1.2) translateY(-4px)
       }
       i {
         cursor pointer

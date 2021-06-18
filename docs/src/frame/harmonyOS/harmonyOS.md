@@ -1,11 +1,13 @@
 ---
-title: 框架 - harmonyOS基础整理
+title: 框架基础与常见问题整理
 des: 鸿蒙开发者基础使用整理
 date: 2021-06-08
 author: Kora
 tags:
     - harmony
 group: frame
+
+log: 2021-06-08 基础配置
 ---
 
 # harmonyOS
