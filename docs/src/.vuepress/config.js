@@ -88,8 +88,8 @@ module.exports = {
 			// 	link: '/config/'
 			// },
 			{ text: '时间轴', link: '/timeline/', icon: 'reco-date' },
-			{ text: '留言板', link: '/valine/', icon: 'reco-date' },
-			{ text: '关于我', link: '/about/', icon: 'reco-account' }
+			{ text: '留言板', link: '/valine/', icon: 'fa-comments' },
+			{ text: '关于我', link: '/about/', icon: 'fa-user-circle' }
 		],
 		sidebar: {
 			// 多分组维护

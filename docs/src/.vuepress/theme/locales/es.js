@@ -1,9 +1,10 @@
 export default {
-  all: 'Todas',
-  article: 'Artículos',
-  tag: 'Etiquetas',
-  category: 'Categorías',
-  friendLink: 'Páginas amigas',
-  timeLine: 'Cronología',
-  timeLineMsg: '¡Ayer otra vez!'
+	all: 'Todas',
+	article: 'Artículos',
+	tag: 'Etiquetas',
+	category: 'Categorías',
+	friendLink: 'Páginas amigas',
+	BlogInfo: 'Blog Info',
+	timeLine: 'Cronología',
+	timeLineMsg: '¡Ayer otra vez!'
 }

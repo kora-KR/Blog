@@ -65,5 +65,8 @@
     "type": "git",
     "url": "git+https://github.com/vuepress-reco/vuepress-theme-reco.git"
   },
-  "version": "1.6.6"
+  "version": "1.6.6",
+  "devDependencies": {
+    "echarts": "^4.1.0"
+  }
 }

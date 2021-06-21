@@ -4,6 +4,7 @@ export default {
   tag: 'ラベル',
   category: '分類',
   friendLink: '友情リンク',
+  BlogInfo: 'Blog Info',
   timeLine: 'タイムライン',
   timeLineMsg: '昨日また！'
 }

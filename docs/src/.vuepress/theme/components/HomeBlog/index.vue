@@ -49,6 +49,9 @@
                     <TagList @getCurrentTag="getPagesByTags" />
                     <h4 v-if="$themeConfig.friendLink && $themeConfig.friendLink.length !== 0"><reco-icon icon="reco-friend" /> {{ $recoLocales.friendLink }}</h4>
                     <FriendLink />
+
+                    <h4><reco-icon icon="fas fa-chart-line" /> 博客资讯</h4>
+                    <BlogInfo />
                 </div>
             </div>
         </ModuleTransition>
@@ -64,6 +67,7 @@
 import { defineComponent, toRefs, reactive, computed, getCurrentInstance, onMounted } from 'vue-demi';
 import TagList from '@theme/components/TagList';
 import FriendLink from '@theme/components/FriendLink';
+import BlogInfo from '@theme/components/BlogInfo';
 import NoteAbstract from '@theme/components/NoteAbstract';
 import { ModuleTransition, RecoIcon } from '@vuepress-reco/core/lib/components';
 import PersonalInfo from '@theme/components/PersonalInfo';
@@ -72,7 +76,7 @@ import { getOneColor } from '@theme/helpers/other';
 
 export default defineComponent({
     // bubblesEffect
-    components: { NoteAbstract, TagList, FriendLink, ModuleTransition, PersonalInfo, RecoIcon },
+    components: { NoteAbstract, TagList, BlogInfo, FriendLink, ModuleTransition, PersonalInfo, RecoIcon },
     setup(props, ctx) {
         const instance = getCurrentInstance().proxy;
 
