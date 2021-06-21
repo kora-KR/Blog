@@ -112,3 +112,9 @@
 ├─deploy.sh 命令部署脚本文件
 ├─package-lock.json 包文件备份
 └─package.json 包文件管理
+
+## 待开发功能
+
+1. 访客记录	
+2. 广告接入
+3. NavList 下拉菜单

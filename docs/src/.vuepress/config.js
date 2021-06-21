@@ -40,6 +40,17 @@ module.exports = {
 			"type": "text/javascript",
 			"src": "/js/CanvasBubble.js"
 		}],
+		[
+			"script",
+			{},
+			`var _hmt = _hmt || [];
+			(function() {
+			  var hm = document.createElement("script");
+			  hm.src = "https://hm.baidu.com/hm.js?72c14dfe42bcde18b69411639c9306e3";
+			  var s = document.getElementsByTagName("script")[0]; 
+			  s.parentNode.insertBefore(hm, s);
+			})();`
+		]
 	],
 
 	/**
