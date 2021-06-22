@@ -6,7 +6,7 @@
         <reco-icon v-if="currentPage == 1 && index < 3" icon="iconfont reco-sticky" style="font-size: 33px" />
         <article v-if="index % 2 == 0" class="abstract-item_left">
             <main>
-                <section :style="[{ background: '#eee url(' + require('../images/banner/' + Math.floor(Math.random() * 4) + '.jpg') + ') center center / cover no-repeat' }]"></section>
+                <section :style="[{ background: '#eee url(' + require('../images/banner/' + Math.floor(Math.random() * 5) + '.jpg') + ') center center / cover no-repeat' }]"></section>
             </main>
         </article>
         <article class="abstract-item_right">
