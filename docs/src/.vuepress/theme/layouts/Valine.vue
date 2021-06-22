@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Common class="timeline-wrapper" :sidebar="false" :hide="false">
+        <Common class="timeline-wrapper" :from="'valine'" :sidebar="false" :hide="false">
             <div id="vcomments"></div>
         </Common>
     </div>

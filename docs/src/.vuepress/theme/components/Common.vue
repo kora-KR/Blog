@@ -1,7 +1,7 @@
 <template>
     <div class="theme-container" :class="pageClasses">
         <!-- kora - 增加全局背景图 -->
-        <section class="banner" :style="[{ background: '#eee url(' + require('../images/banner/0.jpg') + ') center center / cover no-repeat', height: fullScreen ? '100vh' : '352px', opacity: hide ? 0 : 1 }]"></section>
+        <section class="banner" :style="[{ background: '#eee url(' + require('../images/banner/4.jpg') + ') center center / cover no-repeat', height: fullScreen ? '100vh' : '352px', opacity: hide ? 0 : 1 }]"></section>
 
         <div v-if="!absoluteEncryption">
             <transition name="fade">
@@ -62,6 +62,10 @@ export default defineComponent({
     components: { Sidebar, Navbar, Password, PersonalInfo },
 
     props: {
+        from: {
+            type: String,
+            default: '',
+        },
         sidebar: {
             type: Boolean,
             default: true,
