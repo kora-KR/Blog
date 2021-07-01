@@ -286,7 +286,7 @@ const useDetail = () => {
                         visualMap: {
                             type: 'piecewise',
                             show: true,
-                            left: 2,
+                            left: 20,
                             bottom: 20,
                             color: '#900',
                             outOfRange: {
