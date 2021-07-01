@@ -9,11 +9,16 @@
         <reco-icon v-if="pageInfo.frontmatter.upDate" icon="fa-history">
             <span>{{ pageInfo.frontmatter.upDate }}</span>
         </reco-icon>
+
         <reco-icon v-if="showAccessNumber === true" icon="reco-eye">
             <AccessNumber :idVal="pageInfo.path" :numStyle="numStyle" />
         </reco-icon>
         <reco-icon v-if="pageInfo.frontmatter.tags" icon="reco-tag" class="tags">
             <span v-for="(subItem, subIndex) in pageInfo.frontmatter.tags" :key="subIndex" class="tag-item" :class="{ active: currentTag == subItem }" @click.stop="goTags(subItem)">{{ subItem }}</span>
+        </reco-icon>
+
+        <reco-icon v-if="articlePv" icon="reco-eye">
+            <span> {{ articlePv }}次</span>
         </reco-icon>
     </div>
 </template>
@@ -25,6 +30,10 @@ import { RecoIcon } from '@vuepress-reco/core/lib/components';
 export default defineComponent({
     components: { RecoIcon },
     props: {
+        articlePv: {
+            type: String,
+            default: () => '',
+        },
         pageInfo: {
             type: Object,
             default() {
@@ -40,7 +49,11 @@ export default defineComponent({
             default: false,
         },
     },
-
+    watch: {
+        articlePv(val) {
+            alert(999);
+        },
+    },
     setup(props, ctx) {
         const instance = getCurrentInstance().proxy;
 

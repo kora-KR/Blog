@@ -68,6 +68,13 @@ module.exports = {
 	},
 	// theme: 'reco', // 主体本地化：https://vuepress-theme-reco.recoluan.com/views/other/reco-optimization.html
 	themeConfig: {
+		// huawei: true,
+		// record: 'ICP 备案文案',
+		// recordLink: 'ICP 备案指向链接',
+		// cyberSecurityRecord: '公安部备案文案',
+		// cyberSecurityLink: '公安部备案指向链接',
+		// // 项目开始时间，只填写年份
+		// startYear: '2017',
 		type: 'blog',
 		subSidebar: 'auto', //在所有页面中启用自动生成子侧边栏，原 sidebar 仍然兼容
 		authorAvatar: 'https://pic3.zhimg.com/v2-9c4646674dec74d22c477ed8aa671a80_xl.jpg',
@@ -88,8 +95,21 @@ module.exports = {
 			// 	link: '/config/'
 			// },
 			{ text: '时间轴', link: '/timeline/', icon: 'reco-date' },
-			{ text: '留言板', link: '/valine/', icon: 'fa-comments' },
-			{ text: '关于我', link: '/about/', icon: 'fa-user-circle' }
+			{ text: '留言板', link: '/valine/', icon: 'reco-suggestion' },
+			{
+				text: '百宝箱', icon: 'fa-briefcase', items: [
+					{ text: '在线拖拽', link: 'http://test.hhxinfo.com/drag/#/', icon: 'fa-spa' },
+					{ text: '文件转换', link: 'http://coolaf.com/tool/md', icon: 'reco-document' },
+					{ text: '知乎转换', link: 'http://markdown.liangtengyu.com:9999/#/', icon: 'reco-zhihu' },
+					{ text: '字体检测', link: 'http://fonts.safe.360.cn/', icon: 'reco-api' },
+				]
+			},
+			{
+				text: '关于我', icon: 'reco-account', items: [
+					{ text: '简  介', link: '/about/', icon: 'fa-user-circle' },
+					{ text: '联系我', link: '/relation?links=1', icon: 'reco-wechat' }
+				]
+			}
 		],
 		sidebar: {
 			// 多分组维护
@@ -202,7 +222,7 @@ module.exports = {
 			// 	text: 'Category' // 默认文案 “分类”
 			// },
 			tag: {
-				location: 3,     // 在导航栏菜单中所占的位置，默认3
+				location: 2,     // 在导航栏菜单中所占的位置，默认3
 				text: '标签'      // 默认文案 “标签”
 			},
 			socialLinks: [     // 信息栏展示社交信息
@@ -212,8 +232,6 @@ module.exports = {
 				{ icon: 'reco-zhihu', color: '#1087EB', link: 'https://www.zhihu.com/people/keycode' },
 				{ icon: 'reco-wechat', color: '#81C362', link: '/relation' },
 				{ icon: 'reco-huawei', color: '#d81e06', link: 'https://career.huawei.com/reccampportal/portal5/index.html' }
-
-
 			]
 		},
 		friendLink: [
@@ -250,6 +268,8 @@ module.exports = {
 	 * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
 	 */
 	plugins: [
+		// 名人警句
+		["vuepress-plugin-boxx"],
 		// 流程图
 		'flowchart',
 		'@vuepress/plugin-back-to-top',

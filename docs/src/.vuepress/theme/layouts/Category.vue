@@ -1,74 +1,64 @@
 <template>
-  <Common class="categories-wrapper" :sidebar="false">
-    <!-- 分类集合 -->
-    <ModuleTransition>
-      <ul v-show="recoShowModule" class="category-wrapper">
-        <li
-          class="category-item"
-          :class="title == item.name ? 'active': ''"
-          v-for="(item, index) in $categoriesList"
-          v-show="item.pages.length > 0"
-          :key="index">
-          <router-link :to="item.path">
-            <span class="category-name">{{ item.name }}</span>
-            <span class="post-num" :style="{ 'backgroundColor': getOneColor() }">{{ item.pages.length }}</span>
-          </router-link>
-        </li>
-      </ul>
-    </ModuleTransition>
+    <Common class="categories-wrapper" :sidebar="false">
+        <!-- 分类集合 -->
+        <ModuleTransition>
+            <ul v-show="recoShowModule" class="category-wrapper">
+                <li class="category-item" :class="title == item.name ? 'active' : ''" v-for="(item, index) in $categoriesList" v-show="item.pages.length > 0" :key="index">
+                    <router-link :to="item.path">
+                        <span class="category-name">{{ item.name }}</span>
+                        <span class="post-num" :style="{ backgroundColor: getOneColor() }">{{ item.pages.length }}</span>
+                    </router-link>
+                </li>
+            </ul>
+        </ModuleTransition>
 
-    <!-- 博客列表 -->
-    <ModuleTransition delay="0.08">
-      <note-abstract
-        v-show="recoShowModule"
-        class="list"
-        :data="posts"
-        @paginationChange="paginationChange"
-      ></note-abstract>
-    </ModuleTransition>
-  </Common>
+        <!-- 博客列表 -->
+        <ModuleTransition delay="0.08">
+            <note-abstract v-show="recoShowModule" class="list" :data="posts" @paginationChange="paginationChange"></note-abstract>
+        </ModuleTransition>
+    </Common>
 </template>
 
 <script>
-import { defineComponent, computed, getCurrentInstance } from 'vue-demi'
-import Common from '@theme/components/Common'
-import NoteAbstract from '@theme/components/NoteAbstract'
-import { ModuleTransition } from '@vuepress-reco/core/lib/components'
-import { sortPostsByStickyAndDate, filterPosts } from '@theme/helpers/postData'
-import { getOneColor } from '@theme/helpers/other'
-import moduleTransitonMixin from '@theme/mixins/moduleTransiton'
+import { defineComponent, computed, getCurrentInstance } from 'vue-demi';
+import Common from '@theme/components/Common';
+import NoteAbstract from '@theme/components/NoteAbstract';
+import { ModuleTransition } from '@vuepress-reco/core/lib/components';
+import { sortPostsByStickyAndDate, filterPosts } from '@theme/helpers/postData';
+import { getOneColor } from '@theme/helpers/other';
+import moduleTransitonMixin from '@theme/mixins/moduleTransiton';
 
 export default defineComponent({
-  mixins: [moduleTransitonMixin],
-  components: { Common, NoteAbstract, ModuleTransition },
+    mixins: [moduleTransitonMixin],
+    components: { Common, NoteAbstract, ModuleTransition },
 
-  setup (props, ctx) {
-    const instance = getCurrentInstance().proxy
+    setup(props, ctx) {
+        const instance = getCurrentInstance().proxy;
 
-    const posts = computed(() => {
-      let posts = instance.$currentCategories.pages
-      posts = filterPosts(posts)
-      sortPostsByStickyAndDate(posts)
-      return posts
-    })
+        const posts = computed(() => {
+            let posts = instance.$currentCategories.pages;
+            posts = filterPosts(posts);
+            sortPostsByStickyAndDate(posts);
+            return posts;
+        });
 
-    const title = computed(() => {
-      return instance.$currentCategories.key
-    })
+        const title = computed(() => {
+            return instance.$currentCategories.key;
+        });
 
-    const getCurrentTag = (tag) => {
-      ctx.emit('currentTag', tag)
-    }
+        const getCurrentTag = (tag) => {
+            ctx.emit('currentTag', tag);
+        };
 
-    const paginationChange = (page) => {
-      setTimeout(() => {
-        window.scrollTo(0, 0)
-      }, 100)
-    }
+        const paginationChange = (page) => {
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+            }, 100);
+        };
 
-    return { posts, title, getCurrentTag, paginationChange, getOneColor }
-  }
-})
+        return { posts, title, getCurrentTag, paginationChange, getOneColor };
+    },
+});
 </script>
 
 <style src="../styles/theme.styl" lang="stylus"></style>

@@ -27,7 +27,7 @@ export default defineComponent({
         const currentPage = ref(1);
 
         const removalMethod = () => {
-            console.log(data, '文章数据');
+            // console.log(data, '文章数据');
             // --------------------------------------------------------------------------------------------
             let obj = {};
             let peon = data.value.reduce((cur, next) => {

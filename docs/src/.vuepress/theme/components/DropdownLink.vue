@@ -51,7 +51,20 @@ export default defineComponent({
 });
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
+.nav-item, .dropdown-wrapper, .dropdown-title{height: 100%!important; font-size: 14px; font-weight: 400; color: #333!important}
+
+.dropdown-item{width: 100px!important; text-align: center; line-height: 40px!important; height: 40px}
+.dropdown-item:hover{background: rgba(100,126,160, .3)!important; color: #fff!important}
+
+.nav-link {
+    font-size: 14px !important;
+    color: #f7f7f7 !important;
+}
+.iconfont {
+    font-size: 16px !important;
+}
+
 .dropdown-wrapper
   cursor pointer
   .dropdown-title
@@ -107,7 +120,7 @@ export default defineComponent({
     &.open .dropdown-title
       margin-bottom 0.5rem
     .nav-dropdown
-      transition height .1s ease-out
+      transition all .3s ease-out
       overflow hidden
       .dropdown-item
         h4
@@ -142,12 +155,12 @@ export default defineComponent({
       overflow-y auto
       position absolute
       top 100%
-      right 0
+      right -14px
       background-color var(--background-color)
-      padding 0.6rem 0
+      padding  0
       box-shadow: var(--box-shadow);
       text-align left
-      border-radius $borderRadius
+      // border-radius $borderRadius
       white-space nowrap
       margin 0
 </style>

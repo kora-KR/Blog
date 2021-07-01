@@ -4,7 +4,7 @@
             <section v-show="recoShowModule">
                 <div class="page-title">
                     <h1 class="title">{{ $page.title }}</h1>
-                    <PageInfo :pageInfo="$page" :showAccessNumber="showAccessNumber"></PageInfo>
+                    <PageInfo :articlePv="articlePv" :pageInfo="$page" :showAccessNumber="showAccessNumber"></PageInfo>
                 </div>
                 <!-- 这里使用 v-show，否则影响 SSR -->
                 <Content class="theme-reco-content" />
@@ -53,8 +53,9 @@
 </template>
 
 <script>
-import { defineComponent, computed, getCurrentInstance, toRefs } from 'vue-demi';
+import { ref, onMounted, defineComponent, computed, getCurrentInstance, toRefs } from 'vue-demi';
 import PageInfo from '@theme/components/PageInfo';
+import { getBDInfoEntry } from '../util/port/portGetBDInfo';
 import { resolvePage, outboundRE, endingSlashRE } from '@theme/helpers/utils';
 import { ModuleTransition } from '@vuepress-reco/core/lib/components';
 import SubSidebar from '@theme/components/SubSidebar';
@@ -66,7 +67,31 @@ export default defineComponent({
 
     setup(props, ctx) {
         const instance = getCurrentInstance().proxy;
-
+        var articlePv = 88;
+        onMounted(() => {
+            getbaiduInfoMap();
+        });
+        const getbaiduInfoMap = async () => {
+            // console.log(instance.$route.path, '文本路由信息');
+            var routePath = instance.$route.path;
+            var params = {
+                metrics: 'pv_count',
+                method: 'visit/toppage/a',
+            };
+            // console.log(instance, 7788);
+            await getBDInfoEntry(params).then((res) => {
+                articlePv = 0;
+                // console.log(res.items[0], '受访页面监听');
+                res.items[0].forEach((item, i, arr) => {
+                    if (item[0].name.includes(routePath)) {
+                        // console.log(item[0].name, res.items[1][i][0], '访问数据');
+                        articlePv += parseInt(res.items[1][i][0]);
+                    }
+                });
+                articlePv += '';
+                console.log(articlePv, '当前页面共访问次数');
+            });
+        };
         const { sidebarItems } = toRefs(props);
 
         const recoShowModule = computed(() => instance.$parent.recoShowModule);
@@ -147,6 +172,7 @@ export default defineComponent({
         });
 
         return {
+            articlePv,
             recoShowModule,
             shouldShowComments,
             showAccessNumber,

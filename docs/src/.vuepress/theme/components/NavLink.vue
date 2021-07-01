@@ -1,13 +1,14 @@
 <template>
     <main>
-        <router-link class="nav-link" :to="link" v-if="!isExternal(link)" :exact="exact">
+        <!-- {{ !isExternal(link) }} {{ !link.includes('out') }} -->
+        <router-link class="nav-link" :to="link" v-if="!isExternal(link) && !link.includes('links')" :exact="exact">
             <reco-icon :icon="`${item.icon}`" />
             {{ item.text }}
         </router-link>
         <a v-else :href="link" class="nav-link external" :target="isMailto(link) || isTel(link) ? null : '_blank'" :rel="isMailto(link) || isTel(link) ? null : 'noopener noreferrer'">
             <reco-icon :icon="`${item.icon}`" />
             {{ item.text }}
-            <OutboundLink />
+            <!-- <OutboundLink /> -->
         </a>
     </main>
 </template>
@@ -44,3 +45,13 @@ export default defineComponent({
     },
 });
 </script>
+
+<style scoped>
+.nav-link {
+    font-size: 14px !important;
+    color: #333 !important;
+}
+.iconfont {
+    font-size: 16px !important;
+}
+</style>

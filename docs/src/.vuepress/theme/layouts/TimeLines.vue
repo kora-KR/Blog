@@ -2,7 +2,8 @@
     <Common class="timeline-wrapper" :sidebar="false">
         <ul class="timeline-content">
             <ModuleTransition>
-                <li v-show="recoShowModule" class="desc">{{ $recoLocales.timeLineMsg }}</li>
+                <!-- <li v-show="recoShowModule" class="desc">{{ $recoLocales.timeLineMsg }}</li> -->
+                <Boxx changeTime="3000" />
             </ModuleTransition>
             <ModuleTransition :delay="String(0.08 * (index + 1))" v-for="(item, index) in $recoPostsForTimeline" :key="index">
                 <li v-show="recoShowModule">

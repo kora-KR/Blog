@@ -35,7 +35,7 @@
                 </div>
                 <div class="info-wrapper">
                     <PersonalInfo />
-                    <h4><reco-icon icon="reco-category" /> {{ $recoLocales.category }}</h4>
+                    <!-- <h4><reco-icon icon="reco-category" /> {{ $recoLocales.category }}</h4>
                     <ul class="category-wrapper">
                         <li class="category-item" v-for="(item, index) in this.$categories.list" :key="index">
                             <router-link :to="item.path">
@@ -43,7 +43,7 @@
                                 <span class="post-num" :style="{ backgroundColor: getOneColor() }">{{ item.pages.length }}</span>
                             </router-link>
                         </li>
-                    </ul>
+                    </ul> -->
                     <hr />
                     <h4 v-if="$tags.list.length !== 0"><reco-icon icon="reco-tag" /> {{ $recoLocales.tag }}</h4>
                     <TagList @getCurrentTag="getPagesByTags" />
@@ -137,8 +137,10 @@ export default defineComponent({
 	display: block;
 	position: relative;
 	z-index: 9999;
-	-webkit-animation: float-in 5s 3s infinite;
-	animation: float-in 5s 3s infinite;
+	-webkit-animation: float-in 3s infinite;
+	animation: float-in 3s infinite;
+	font-size: 30px;
+	color: #fff
 }
 #homePoint{
 	left: 0;
@@ -147,25 +149,20 @@ export default defineComponent({
 	position: absolute;
 }
 @keyframes float-in{
-10% {
-	transform: translateY(0);
-}
-20% {
+0% {
+	opacity: 0.4;
 	transform: translateY(0);
 }
 50% {
 	opacity: 1;
 	transform: translateY(-30px);
 }
-
-75% {
-	transform: translateY(0);
-}
 100% {
+	opacity: 0.4;
 	transform: translateY(0);
 	}
 }
-	.home_more_icon::after{
+.home_more_icon::after{
 	width: 20px;
 	height: 20px;
 	position: absolute;
