@@ -305,25 +305,25 @@ const useDetail = () => {
                             orient: 'horizontal',
                             pieces: [
                                 {
-                                    gte: 100,
-                                    label: '>100',
-                                    color: '#3c57ce',
-                                },
-                                {
                                     gte: 50,
-                                    lt: 100,
-                                    label: '<100',
-                                    color: '#6f83db',
+                                    label: '>50',
+                                    color: '#3c57ce',
                                 },
                                 {
                                     gte: 10,
                                     lt: 50,
                                     label: '<50',
+                                    color: '#6f83db',
+                                },
+                                {
+                                    gte: 1,
+                                    lt: 10,
+                                    label: '<10',
                                     color: '#9face7',
                                 },
                                 {
-                                    lt: 10,
-                                    label: '<10',
+                                    lt: 1,
+                                    label: '<5',
                                     color: '#bcc5ee',
                                 },
                             ],
