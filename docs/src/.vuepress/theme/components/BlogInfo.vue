@@ -92,12 +92,12 @@ const useDetail = () => {
         var x = [];
         await getBDInfoEntry(params).then((res) => {
             // res.items[0] 访问地理 | res.items[1] 访问数据
-            console.log(res.items[0], res.items[1], '百度统计Map');
+            // console.log(res.items[0], res.items[1], '百度统计Map');
             var cityBrowseLine = [];
             res.items[0].forEach((item, i, arr) => {
                 cityBrowseLine.push({ name: item[0], value: res.items[1][i][0], perccent: res.items[1][i][1] });
             });
-            console.log(cityBrowseLine, '线上数据');
+            // console.log(cityBrowseLine, '线上数据');
             var cityBrowse = [
                 {
                     name: '南海诸岛',
@@ -375,7 +375,7 @@ const useDetail = () => {
     const getbaiduInfo = async () => {
         var x = [];
         await getBDInfoEntry().then((res) => {
-            console.log(res, '百度统计');
+            // console.log(res, '百度统计');
             var time = Date.parse(new Date('2018-12-22')),
                 rangeDateNum = parseInt((new Date().getTime() - time) / (1000 * 3600 * 24)),
                 blogInfoList = [

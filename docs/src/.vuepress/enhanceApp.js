@@ -32,7 +32,7 @@ export default ({
 		if (typeof _hmt != "undefined") {
 			if (to.path) {
 				_hmt.push(["_trackPageview", to.fullPath]);
-				console.log("上报百度统计", to.fullPath);
+				// console.log("上报百度统计", to.fullPath);
 			}
 		}
 

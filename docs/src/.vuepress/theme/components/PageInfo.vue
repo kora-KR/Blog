@@ -18,7 +18,7 @@
         </reco-icon>
 
         <reco-icon v-if="articlePv" icon="reco-eye">
-            <span> {{ articlePv }}次</span>
+            <span> {{ articlePv }} 浏览量</span>
         </reco-icon>
     </div>
 </template>
@@ -49,14 +49,8 @@ export default defineComponent({
             default: false,
         },
     },
-    watch: {
-        articlePv(val) {
-            alert(999);
-        },
-    },
     setup(props, ctx) {
         const instance = getCurrentInstance().proxy;
-
         const numStyle = {
             fontSize: '.9rem',
             fontWeight: 'normal',

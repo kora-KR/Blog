@@ -64,10 +64,14 @@ export default defineComponent({
     components: { PageInfo, ModuleTransition, SubSidebar },
 
     props: ['sidebarItems'],
-
+    watch: {
+        recoShowModule() {
+            this.getbaiduInfoMap();
+        },
+    },
     setup(props, ctx) {
         const instance = getCurrentInstance().proxy;
-        var articlePv = 88;
+        var articlePv = ref(true);
         onMounted(() => {
             getbaiduInfoMap();
         });
@@ -78,18 +82,17 @@ export default defineComponent({
                 metrics: 'pv_count',
                 method: 'visit/toppage/a',
             };
-            // console.log(instance, 7788);
             await getBDInfoEntry(params).then((res) => {
-                articlePv = 0;
+                articlePv.value = 0;
                 // console.log(res.items[0], '受访页面监听');
                 res.items[0].forEach((item, i, arr) => {
                     if (item[0].name.includes(routePath)) {
                         // console.log(item[0].name, res.items[1][i][0], '访问数据');
-                        articlePv += parseInt(res.items[1][i][0]);
+                        articlePv.value += parseInt(res.items[1][i][0]);
                     }
                 });
-                articlePv += '';
-                console.log(articlePv, '当前页面共访问次数');
+                articlePv.value += '';
+                console.log(articlePv, '百度统计 - 总浏览量');
             });
         };
         const { sidebarItems } = toRefs(props);
@@ -183,6 +186,7 @@ export default defineComponent({
             editLink,
             editLinkText,
             pageStyle,
+            getbaiduInfoMap,
         };
     },
 });

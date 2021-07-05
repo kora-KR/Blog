@@ -96,6 +96,11 @@ module.exports = {
 			// },
 			{ text: '时间轴', link: '/timeline/', icon: 'reco-date' },
 			{ text: '留言板', link: '/valine/', icon: 'reco-suggestion' },
+			// {
+			// 	text: '开源API', icon: 'fa - briefcase', items: [
+			// 		{ text: '聚合数据', link: 'https://www.juhe.cn/docs', icon: 'fa-spa' },
+			// 	]
+			// },
 			{
 				text: '百宝箱', icon: 'fa-briefcase', items: [
 					{ text: '在线拖拽', link: 'http://test.hhxinfo.com/drag/#/', icon: 'fa-spa' },
@@ -322,7 +327,7 @@ module.exports = {
 				showIcon: "/images/KR.png",
 				showText: "RUN",
 				hideIcon: "/images/KR.png",
-				hideText: "(●—●)不要走啊，再看看！",
+				hideText: "路遙知馬力，日久見人心",
 				recoverTime: 2000
 			}
 		],

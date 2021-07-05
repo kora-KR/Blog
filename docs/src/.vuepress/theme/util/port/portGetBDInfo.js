@@ -26,7 +26,7 @@ async function getBDInfo(params) {
 			site_id: '16885988', //网站id
 			method: 'source/all/a', //需要的报告范围
 			start_date: '20181222', //开始时间
-			end_date: '20211231', //结束时间
+			end_date: '20221231', //结束时间
 			metrics: '', //报告所包含的数据类，pv_count=浏览量
 			...params
 		},
