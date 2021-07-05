@@ -74,6 +74,13 @@ module.exports = (options, ctx) => ({
 					layout: 'Relation',
 					scopeLayout: 'Relation'
 				},
+				{
+					id: 'freeApi',
+					keys: ['freeApi'],
+					path: '/freeApi/',
+					layout: 'FreeApi',
+					scopeLayout: 'FreeApi'
+				},
 			]
 		}],
 		'vuepress-plugin-smooth-scroll',

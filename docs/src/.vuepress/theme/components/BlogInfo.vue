@@ -286,7 +286,7 @@ const useDetail = () => {
                         visualMap: {
                             type: 'piecewise',
                             show: true,
-                            left: 20,
+                            left: 16,
                             bottom: 20,
                             color: '#900',
                             outOfRange: {
@@ -305,14 +305,14 @@ const useDetail = () => {
                             orient: 'horizontal',
                             pieces: [
                                 {
-                                    gte: 50,
-                                    label: '>50',
+                                    gte: 100,
+                                    label: '>100',
                                     color: '#3c57ce',
                                 },
                                 {
                                     gte: 10,
-                                    lt: 50,
-                                    label: '<50',
+                                    lt: 100,
+                                    label: '<100',
                                     color: '#6f83db',
                                 },
                                 {
@@ -323,7 +323,7 @@ const useDetail = () => {
                                 },
                                 {
                                     lt: 1,
-                                    label: '<5',
+                                    label: '<1',
                                     color: '#bcc5ee',
                                 },
                             ],

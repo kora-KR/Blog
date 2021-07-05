@@ -104,9 +104,11 @@ module.exports = {
 			{
 				text: '百宝箱', icon: 'fa-briefcase', items: [
 					{ text: '在线拖拽', link: 'http://test.hhxinfo.com/drag/#/', icon: 'fa-spa' },
+					// { text: '开源Api', link: '/freeApi/', icon: 'reco-api' },
+					{ text: '开源Api', link: 'https://www.juhe.cn/', icon: 'reco-api' },
 					{ text: '文件转换', link: 'http://coolaf.com/tool/md', icon: 'reco-document' },
 					{ text: '知乎转换', link: 'http://markdown.liangtengyu.com:9999/#/', icon: 'reco-zhihu' },
-					{ text: '字体检测', link: 'http://fonts.safe.360.cn/', icon: 'reco-api' },
+					{ text: '字体检测', link: 'http://fonts.safe.360.cn/', icon: 'reco-facebook' },
 				]
 			},
 			{

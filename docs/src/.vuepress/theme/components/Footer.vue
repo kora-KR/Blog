@@ -127,7 +127,7 @@ export default defineComponent({
 footer{display: flex; justify-content: center; align-items: center;cursor: pointer; position: relative; top: 0px;
 	>img{position: relative; top: -4px; width: 20px; height: auto; animation: iconAnimate 1.33s ease-in-out infinite;}
 	.outer_chain{position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%); display: flex; justify-content: center; align-items: center;
-		a{margin: 0 8px;  display: flex; justify-content: center; align-items: center;
+		a{margin: 0 15px;  display: flex; justify-content: center; align-items: center;
 			img{height: 1.3em}
 		}
 	}
