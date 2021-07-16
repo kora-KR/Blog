@@ -136,3 +136,13 @@ $ git push origin :refs/tags/<tag名> // 删除线上(如 git push origin :refs/
     解决：
     1. Settings -> Repository -> Protected Branches -> Unprotect // 不建议使用，处理完后建议重新打开
     2. Settings -> Repository -> Protected Branches -> Allowed to push配置可修改角色
+
+### push 代码超过 100M
+
+> fatal: fatal: sha1 file stdout write error: Broken pipe The remote end hung up unexpectedly error
+
+    解决：
+    git config http.postBuffer 524288000 // 提高提交上限(500*1024*1024 = 500M)
+    git config -l // 查看配置是否成功
+
+[传送门](https://www.cnblogs.com/zmdComeOn/p/12565629.html)
