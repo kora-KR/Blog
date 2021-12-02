@@ -94,9 +94,11 @@ const useDetail = () => {
             // res.items[0] 访问地理 | res.items[1] 访问数据
             // console.log(res.items[0], res.items[1], '百度统计Map');
             var cityBrowseLine = [];
-            res.items[0].forEach((item, i, arr) => {
-                cityBrowseLine.push({ name: item[0], value: res.items[1][i][0], perccent: res.items[1][i][1] });
-            });
+            if (res.items && res.items[0]) {
+                res.items[0].forEach((item, i, arr) => {
+                    cityBrowseLine.push({ name: item[0], value: res.items[1][i][0], perccent: res.items[1][i][1] });
+                });
+            }
             // console.log(cityBrowseLine, '线上数据');
             var cityBrowse = [
                 {
@@ -381,8 +383,8 @@ const useDetail = () => {
                 blogInfoList = [
                     { key: '运行时间', val: `${rangeDateNum}天` },
                     { key: '文章数目', val: '' },
-                    { key: '访客量(UV)', val: `${res.sum[0][1]}人` },
-                    { key: '浏览量(PV)', val: `${res.sum[0][0]}次` },
+                    { key: '访客量(UV)', val: `${res.sum ? res.sum[0][1] : '--'}人` },
+                    { key: '浏览量(PV)', val: `${res.sum ? res.sum[0][0] : '--'}次` },
                     { key: '文章字数', val: '99898' },
                 ];
             x = blogInfoList;

@@ -15,6 +15,29 @@ export function getBDInfoEntry(params = {}) {
 	});
 }
 
+async function getBDToken(refresh_token = '122.f98e04d2393a94f7b13d77a8eaf1a791.Y5S5yZqZZHxki-vBgqRQsM0GByxMRbtMAL7JIbS.botmSA') {
+	var infoToken = {}
+	await $.ajax({
+		type: 'get',
+		dataType: 'jsonp',
+		url: 'http://openapi.baidu.com/oauth/2.0/token',
+		data: {
+			grant_type: 'refresh_token',
+			refresh_token,
+			client_id: 'L5E8CVEGzoBcPoTComFzucxT',
+			client_secret: 'gOFXND4AsdBrPgXgXdfNdEo1tYp8UC1X'
+		},
+		success: (res) => {
+			console.log(res, 'new token')
+			infoToken = res.result
+		},
+		error: (err) => {
+			console.log('error======', err);
+		},
+	});
+	return infoToken
+}
+
 async function getBDInfo(params) {
 	var info = {};
 	await $.ajax({
@@ -22,7 +45,7 @@ async function getBDInfo(params) {
 		dataType: 'jsonp',
 		url: 'https://openapi.baidu.com/rest/2.0/tongji/report/getData',
 		data: {
-			access_token: '121.35dc2c50d908afc3d42433ee1f8cda3f.YDtmZ0EysEB_zeCY-gbpEQnkPmSW-5uZjyKwfjp.GhUEUQ', //身份验证
+			access_token: '121.a2224353bfbcba03a9de261b9b476fec.YmC9f_9vhgwGH0jByJ-e9wxDgDye6c96wxDyTt8.ql9AWQ', //身份验证
 			site_id: '16885988', //网站id
 			method: 'source/all/a', //需要的报告范围
 			start_date: '20181222', //开始时间
@@ -31,6 +54,7 @@ async function getBDInfo(params) {
 			...params
 		},
 		success: (res) => {
+			console.log(res, 'BDInfo')
 			info = res.result
 		},
 		error: (err) => {

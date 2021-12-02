@@ -85,12 +85,14 @@ export default defineComponent({
             await getBDInfoEntry(params).then((res) => {
                 articlePv.value = 0;
                 // console.log(res.items[0], '受访页面监听');
-                res.items[0].forEach((item, i, arr) => {
-                    if (item[0].name.includes(routePath)) {
-                        // console.log(item[0].name, res.items[1][i][0], '访问数据');
-                        articlePv.value += parseInt(res.items[1][i][0]);
-                    }
-                });
+                if (res.items && res.items[0]) {
+                    res.items[0].forEach((item, i, arr) => {
+                        if (item[0].name.includes(routePath)) {
+                            // console.log(item[0].name, res.items[1][i][0], '访问数据');
+                            articlePv.value += parseInt(res.items[1][i][0]);
+                        }
+                    });
+                }
                 articlePv.value += '';
                 console.log(articlePv, '百度统计 - 总浏览量');
             });
