@@ -114,7 +114,8 @@ module.exports = {
 			{
 				text: '关于我', icon: 'reco-account', items: [
 					{ text: '简  介', link: '/about/', icon: 'fa-user-circle' },
-					{ text: '联系我', link: '/relation?links=1', icon: 'reco-wechat' }
+					{ text: '联系我', link: '/relation?links=1', icon: 'reco-wechat' },
+					{ text: '个人简历', link: 'http://koraresume.21cloudbox.com', icon: 'reco-blog' },
 				]
 			}
 		],
@@ -238,6 +239,7 @@ module.exports = {
 				{ icon: 'reco-mayun', color: '#C81F0D', link: 'https://gitee.com/koras' },
 				{ icon: 'reco-zhihu', color: '#1087EB', link: 'https://www.zhihu.com/people/keycode' },
 				{ icon: 'reco-wechat', color: '#81C362', link: '/relation' },
+				// { icon: 'reco-mayun', color: '#81C362', link: 'koraresume.21cloudbox.com' },
 				{ icon: 'reco-huawei', color: '#d81e06', link: 'https://career.huawei.com/reccampportal/portal5/index.html' }
 			]
 		},

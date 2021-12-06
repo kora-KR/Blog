@@ -53,6 +53,7 @@
 ## 主题库
 
 1. `vuepressReco`：[vuepressReco](https://vuepress-theme-reco.recoluan.com/)
+2. `vuepressRecoIcon`：[vuepressRecoIcon](https://vuepress-theme-reco.recoluan.com/views/1.x/configJs.html#%E5%9B%BE%E6%A0%87)
 
 ## 路由解析
 
