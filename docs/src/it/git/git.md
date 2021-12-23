@@ -125,6 +125,16 @@ $ git push origin --tags
 // 2. tag删除
 $ git tag -d <tag名> // 删除本地(如 git tag -d 1.0.1)
 $ git push origin :refs/tags/<tag名> // 删除线上(如 git push origin :refs/tags/1.0.1)
+
+// 3. 查看tag
+$ git tag // 查看列表
+$ git show <tag名> // 查看当前tag详细信息
+
+// 4. tag升级
+$ git checkout -b <迁出branch名> <tag名>  // tag迁出分支(如 git checkout -b tagToBranch 1.0.1)
+$ git checkout <迁出branch名> // 切换tag迁出分支，在此分支修改迭代
+$ git tag -a <tag名> -m <tag备注> // 标记tag(如 git tag -a 1.0.2 -m "Release version 1.0.2")
+$ git push origin --tags
 ```
 
 ## 异常问题
