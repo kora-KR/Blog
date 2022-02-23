@@ -1,66 +1,78 @@
 <template>
-  <div class="mode-options">
-    <h4 class="title">Choose mode</h4>
-    <ul class="color-mode-options">
-      <li
-        v-for="(mode, index) in modeOptions"
-        :key="index"
-        :class="getClass(mode.mode)"
-        @click="selectMode(mode.mode)"
-      >{{ mode.title }}</li>
-    </ul>
-  </div>
+    <section>
+        <div class="mode-options">
+            <h4 class="title">光线模式</h4>
+            <ul class="color-mode-options">
+                <li v-for="(mode, index) in modeOptions" :key="index" :class="getClass(mode.mode)" @click="selectMode(mode.mode)">{{ mode.title }}</li>
+            </ul>
+        </div>
+
+        <!-- <section class="mode-options-bottom-right">
+            <reco-icon icon="fas fa-adjust"> </reco-icon>
+        </section> -->
+    </section>
 </template>
 
 <script>
-import applyMode from './applyMode'
+import applyMode from './applyMode';
 export default {
-  name: 'ModeOptions',
+    name: 'ModeOptions',
 
-  data () {
-    return {
-      modeOptions: [
-        { mode: 'dark', title: 'dark' },
-        { mode: 'auto', title: 'auto' },
-        { mode: 'light', title: 'light' }
-      ],
-      currentMode: 'auto'
-    }
-  },
-
-  mounted () {
-    // modePicker 开启时默认使用用户主动设置的模式
-    this.currentMode = localStorage.getItem('mode') || this.$themeConfig.mode || 'auto'
-
-    // Dark and Light autoswitches
-    // 为了避免在 server-side 被执行，故在 Vue 组件中设置监听器
-    var that = this
-    window.matchMedia('(prefers-color-scheme: dark)').addListener(() => {
-      that.$data.currentMode === 'auto' && applyMode(that.$data.currentMode)
-    })
-    window.matchMedia('(prefers-color-scheme: light)').addListener(() => {
-      that.$data.currentMode === 'auto' && applyMode(that.$data.currentMode)
-    })
-
-    applyMode(this.currentMode)
-  },
-
-  methods: {
-    selectMode (mode) {
-      if (mode !== this.currentMode) {
-        this.currentMode = mode
-        applyMode(mode)
-        localStorage.setItem('mode', mode)
-      }
+    data() {
+        return {
+            modeOptions: [
+                { mode: 'dark', title: '黑暗' },
+                { mode: 'auto', title: '自动' },
+                { mode: 'light', title: '阳光' },
+            ],
+            currentMode: 'auto',
+        };
     },
-    getClass (mode) {
-      return mode !== this.currentMode ? mode : `${mode} active`
-    }
-  }
-}
+
+    mounted() {
+        // modePicker 开启时默认使用用户主动设置的模式
+        this.currentMode = localStorage.getItem('mode') || this.$themeConfig.mode || 'auto';
+
+        // Dark and Light autoswitches
+        // 为了避免在 server-side 被执行，故在 Vue 组件中设置监听器
+        var that = this;
+        window.matchMedia('(prefers-color-scheme: dark)').addListener(() => {
+            that.$data.currentMode === 'auto' && applyMode(that.$data.currentMode);
+        });
+        window.matchMedia('(prefers-color-scheme: light)').addListener(() => {
+            that.$data.currentMode === 'auto' && applyMode(that.$data.currentMode);
+        });
+
+        applyMode(this.currentMode);
+    },
+
+    methods: {
+        selectMode(mode) {
+            if (mode !== this.currentMode) {
+                this.currentMode = mode;
+                applyMode(mode);
+                localStorage.setItem('mode', mode);
+            }
+        },
+        getClass(mode) {
+            return mode !== this.currentMode ? mode : `${mode} active`;
+        },
+    },
+};
 </script>
 
+<style scoped>
+.mode-options-bottom-right {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100px;
+    height: 100px;
+    background: #900;
+}
+</style>
 <style lang="stylus">
+
 .mode-options
   background-color var(--background-color)
   min-width: 125px;

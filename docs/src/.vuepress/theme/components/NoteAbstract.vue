@@ -27,7 +27,7 @@ export default defineComponent({
         const currentPage = ref(1);
 
         const removalMethod = () => {
-            // console.log(data, '文章数据');
+            console.log(data, '文章数据');
             // --------------------------------------------------------------------------------------------
             let obj = {};
             let peon = data.value.reduce((cur, next) => {
@@ -42,7 +42,14 @@ export default defineComponent({
         const currentPageData = computed(() => {
             const start = (currentPage.value - 1) * instance.$perPage;
             const end = currentPage.value * instance.$perPage;
-            return removalMethod().slice(start, end);
+            let sortRes = removalMethod().slice(start, end);
+            sortRes.map((item, index) => {
+                if (item.title.includes('HOT')) {
+                    sortRes.unshift(sortRes.splice(index, 1)[0]);
+                }
+            });
+
+            return sortRes;
         });
         // 去重文章长度
         const getPageLength = removalMethod().length;

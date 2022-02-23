@@ -42,7 +42,7 @@ export default {
             }
         },
         handleClickBtn() {
-            if (this.psw == 'koraloveniko' && this.admin == 'korains') {
+            if (this.psw == 'korains' && this.admin == 'korains') {
                 this.encInfoShow = true;
                 return;
             }

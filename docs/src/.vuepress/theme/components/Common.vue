@@ -5,7 +5,12 @@
 
         <div v-if="!absoluteEncryption">
             <transition name="fade">
-                <LoadingPage v-show="firstLoad" class="loading-wrapper" />
+                <!-- <LoadingPage v-show="firstLoad" class="loading-wrapper" /> -->
+                <section v-show="firstLoad" style="z-index: 999999; position: absolute; left: 0; top: 0;width: 100%; height: 100%; background: #d5eaed; overflow: hidden">
+                    <div class="loader"></div>
+
+                    <nav class="reload_btn" @click="handleClickReload">- 重新加载 -</nav>
+                </section>
             </transition>
 
             <transition name="fade">
@@ -157,7 +162,11 @@ export default defineComponent({
             setTimeout(() => {
                 firstLoad.value = false;
                 if (sessionStorage.getItem('firstLoad') == undefined) sessionStorage.setItem('firstLoad', false);
-            }, time);
+            }, +time + +2000);
+        };
+
+        const handleClickReload = () => {
+            location.reload();
         };
 
         // 首次渲染时，recoShowModule 直接为 true，否则锚点失效
@@ -177,7 +186,7 @@ export default defineComponent({
             handleLoading();
         });
 
-        return { isSidebarOpen, absoluteEncryption, shouldShowNavbar, shouldShowSidebar, pageClasses, hasKey, hasPageKey, isHasKey, isHasPageKey, toggleSidebar, firstLoad, recoShowModule };
+        return { isSidebarOpen, absoluteEncryption, shouldShowNavbar, shouldShowSidebar, pageClasses, hasKey, hasPageKey, isHasKey, isHasPageKey, toggleSidebar, firstLoad, recoShowModule, handleClickReload };
     },
 
     watch: {
@@ -188,6 +197,108 @@ export default defineComponent({
     },
 });
 </script>
+
+<style>
+.reload_btn {
+    position: absolute;
+    /* top: calc(50%); */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    animation: show 1.5s ease 4s both;
+}
+.reload_btn:hover {
+    background: rgba(172, 171, 171, 0.3);
+    color: #fff;
+}
+.loader {
+    position: relative;
+    width: 2.5em;
+    height: 2.5em;
+    transform: rotate(165deg);
+}
+.loader:before,
+.loader:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 0.25em;
+    transform: translate(-50%, -50%);
+}
+.loader:before {
+    animation: before 2s infinite;
+}
+.loader:after {
+    animation: after 2s infinite;
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+        top: 110%;
+    }
+    to {
+        opacity: 1;
+        top: calc(50%);
+    }
+}
+@keyframes before {
+    0% {
+        width: 0.5em;
+        box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+    }
+    35% {
+        width: 2.5em;
+        box-shadow: 0 -0.5em rgba(225, 20, 98, 0.75), 0 0.5em rgba(111, 202, 220, 0.75);
+    }
+    70% {
+        width: 0.5em;
+        box-shadow: -1em -0.5em rgba(225, 20, 98, 0.75), 1em 0.5em rgba(111, 202, 220, 0.75);
+    }
+    100% {
+        box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+    }
+}
+@keyframes after {
+    0% {
+        height: 0.5em;
+        box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+    }
+    35% {
+        height: 2.5em;
+        box-shadow: 0.5em 0 rgba(61, 184, 143, 0.75), -0.5em 0 rgba(233, 169, 32, 0.75);
+    }
+    70% {
+        height: 0.5em;
+        box-shadow: 0.5em -1em rgba(61, 184, 143, 0.75), -0.5em 1em rgba(233, 169, 32, 0.75);
+    }
+    100% {
+        box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+    }
+}
+/**
+ * Attempt to center the whole thing!
+ */
+html,
+body {
+    height: 100%;
+}
+
+.loader {
+    position: absolute;
+    top: calc(40% - 1.25em);
+    left: calc(50% - 1.25em);
+}
+</style>
 
 <style lang="stylus" scoped>
 .banner

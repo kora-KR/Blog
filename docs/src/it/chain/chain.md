@@ -1,10 +1,10 @@
 ---
-title: 原型链 - 三张图带你搞懂其本质！
-des: 原型链基础概念
+title: 原型链 - 三张图带你搞懂其本质！👍
+des: 原型链基础概念(优质)
 date: 2021-06-01
 author: Kora
 tags:
-    - 原型链
+    - 原型链 
     - 技术点
 group: itChain
 ---

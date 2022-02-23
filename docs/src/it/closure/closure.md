@@ -1,6 +1,6 @@
 ---
-title: 闭包 - 一个故事简单理解
-des: 闭包基础概念
+title: 闭包 - 一个故事简单理解👍
+des: 闭包基础概念(优质)
 date: 2021-06-01
 author: Kora
 tags:

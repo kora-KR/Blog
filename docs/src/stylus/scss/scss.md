@@ -332,3 +332,48 @@ header{ font-size: custom(6)upx }
 
 header{fopnt-size: 996upx}
 ```
+
+> 封装变量使用
+
+```js
+// 基础颜色
+$baseColor: #EE545A;
+// 线性渐变
+$lineColor: linear-gradient(90deg,rgba(255,155,21,1) 0%,rgba(255,255,255,.3) 100%);
+// 定位
+@mixin site($sitePosition: fixed, $siteLeft: 0, $siteTop: 0, $transformX: 0, $transformY: 0) {
+ position: $sitePosition;
+   left: $siteLeft;
+   top: $siteTop;
+   transform: translate($transformX, $transformY);
+}
+// 弹性盒
+@mixin flex($level: center, $vertical: center) {
+  display: flex;
+  justify-content: $level;
+  align-items: $vertical;
+}
+// 1px 边框
+@mixin border($font: bottom, $color: #eee) {
+  border-#{$font}: 1upx solid $color;
+  box-sizing: border-box;
+}
+@mixin borderAround($color: #666) {
+  border: 1upx solid $color;
+  box-sizing: border-box;
+}
+// 多行省略号
+@mixin ellipsis($line: 1) {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  line-clamp: $line;
+  -webkit-box-orient: vertical;
+}
+// 公用button
+@mixin nav_button($bgColor: $lineColor) {}
+// 圆
+@mixin circle($circleR, $circleC: #A9AEBD) {display: block; width: $circleR; height: $circleR; border-radius: 50%; background: $circleC}
+
+```

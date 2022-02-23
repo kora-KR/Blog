@@ -2,6 +2,8 @@
     <div v-click-outside="hideMenu" class="color-picker" v-if="$themeConfig.modePicker !== false">
         <a class="color-button" @click.prevent="showMenu = !showMenu" href="javascript:void(0)">
             <reco-icon icon="reco-color" />
+            <!-- <reco-icon icon="fas fa-adjust"> </reco-icon> -->
+            <!-- <reco-icon icon="reco-theme"> </reco-icon> -->
         </a>
         <ModuleTransition :transform="['translate(-50%, 0)', 'translate(-50%, -10px)']">
             <div v-show="showMenu" class="color-picker-menu">
@@ -72,7 +74,7 @@ export default {
 		align-items: center;
 		height: 100%;
 		.iconfont {
-			font-size 1.4rem
+			font-size 1.2rem
 			color: $accentColor
 		}
 	}

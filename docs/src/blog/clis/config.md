@@ -1,3 +1,14 @@
+---
+title: 博客开发相关
+des: blogIt-config
+date: 2022-02-23
+author: Kora
+tags:
+    - 路由配置
+group: blog
+---
+
+```js
 const { description } = require('../../package')
 
 module.exports = {
@@ -385,3 +396,5 @@ module.exports = {
 		]
 	]
 }
+
+```

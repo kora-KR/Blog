@@ -54,8 +54,14 @@
 
 1. `vuepressReco`：[vuepressReco](https://vuepress-theme-reco.recoluan.com/)
 2. `vuepressRecoIcon`：[vuepressRecoIcon](https://vuepress-theme-reco.recoluan.com/views/1.x/configJs.html#%E5%9B%BE%E6%A0%87)
+3. `fontawesome`: [fontawesome](https://fontawesome.dashgame.com/)
 
 ## 路由解析
+
+		- docs/blog: 博客相关
+			- cli: 搭建
+			- plug: 插件
+			- source: 素材
 
     - docs/frame:  框架整理
     	- vue: vue集合

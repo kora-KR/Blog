@@ -1,9 +1,18 @@
 <template>
-    <div class="abstract-item" @click="$router.push(item.path)">
+    <div :class="['abstract-item', { 'abstract-item_hot': currentPage == 1 && index < 3, 'abstract-item_thumbs': item.frontmatter.des.indexOf('优质') > -1 }]" @click="$router.push(item.path)">
+        <!-- {{ item }} -->
         <svg>
             <rect id="shape" height="232" width="811"></rect>
         </svg>
-        <reco-icon v-if="currentPage == 1 && index < 3" icon="iconfont reco-sticky" style="font-size: 33px" />
+        <!-- <reco-icon v-if="currentPage == 1 && index < 3" icon="iconfont reco-sticky" style="font-size: 33px" /> -->
+
+        <div class="thumbs_all hot_all" v-if="currentPage == 1 && index < 3">
+            <reco-icon icon="fa-fire" style="font-size: 20px; color: #fff" />
+        </div>
+
+        <div class="thumbs_all" v-if="item.frontmatter.des.indexOf('优质') > -1">
+            <reco-icon icon="fa-thumbs-o-up" style="font-size: 20px; color: #fff" />
+        </div>
         <article v-if="index % 2 == 0" class="abstract-item_left">
             <main>
                 <section :style="[{ background: '#eee url(' + require('../images/banner/' + Math.floor(Math.random() * 5) + '.jpg') + ') center center / cover no-repeat' }]"></section>
@@ -39,6 +48,31 @@ export default defineComponent({
 });
 </script>
 
+<style scoped>
+.hot_all {
+    border-top: 34px solid #e15b64 !important;
+}
+.thumbs_all {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 34px solid #ffc83d;
+    border-right: 34px solid transparent;
+}
+.fa-thumbs-o-up {
+    position: absolute;
+    top: -33px;
+    left: 0;
+}
+
+.fa-fire {
+    position: absolute;
+    top: -33px;
+    left: 1px;
+}
+</style>
 <style lang="stylus" scoped>
 .abstract-item
   position relative
@@ -150,5 +184,28 @@ rect#shape {
 	stroke-dasharray:500 0;
 	stroke-width:3px;
 	stroke:#647EA0;
+}
+
+.abstract-item_hot:hover #shape {
+	stroke-dasharray:500 0;
+	stroke-width:3px;
+	stroke:#e15b64!important;
+}
+.abstract-item_thumbs:hover #shape {
+	stroke-dasharray:500 0;
+	stroke-width:3px;
+	stroke:#ffc83d!important;
+}
+.abstract-item_hot .title:hover a{
+	color: #e15b64!important;
+}
+.abstract-item_thumbs .title:hover a{
+	color: #ffc83d!important;
+}
+.abstract-item_hot .title:hover:after{
+	background: #e15b64
+}
+.abstract-item_thumbs .title:hover:after{
+	background: #ffc83d
 }
 </style>
