@@ -126,7 +126,7 @@ module.exports = {
 				text: '关于我', icon: 'reco-account', items: [
 					{ text: '简  介', link: '/about/', icon: 'fa-user-circle' },
 					{ text: '联系我', link: '/relation?links=1', icon: 'reco-wechat' },
-					{ text: '个人简历', link: 'http://koraresume.21cloudbox.com', icon: 'reco-blog' },
+					{ text: '个人简历', link: 'http://koras.gitee.io/korains_resume', icon: 'reco-blog' },
 				]
 			}
 		],

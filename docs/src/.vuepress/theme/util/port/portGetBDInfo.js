@@ -14,7 +14,6 @@ export function getBDInfoEntry(params = {}) {
 		});
 	});
 }
-
 // new refresh_token: 122.4eb926fcdaefab7c5bcf91eb382bbaa3.YQoKB4U4_lNZETYwpyYR9xUTyDGWZL4-76b5hUp.6IY37w
 async function getBDToken(refresh_token = '122.f98e04d2393a94f7b13d77a8eaf1a791.Y5S5yZqZZHxki-vBgqRQsM0GByxMRbtMAL7JIbS.botmSA') {
 	var infoToken = {}
@@ -62,9 +61,9 @@ async function getBDInfo(params) {
 				} else {
 					info = { "timeSpan": ["2018/12/22 - 2022/02/22"], "fields": ["source_type_title", "pv_count", "visitor_count", "ip_count", "bounce_ratio", "avg_visit_time"], "total": 2, "sum": [[7865, 2949, 2521, 92.52, 162], []], "pageSum": [[7865, 2949, 2521, 92.52, 162], [], []], "items": [[[{ "name": "直接访问", "source": "through" }], [{ "name": "外部链接", "source": "link" }]], [[7844, 2943, 2516, 92.7, 162], [21, 6, 5, 0, 104]], [], []] }
 				}
-				return
+			} else {
+				info = res.result
 			}
-			info = res.result
 		},
 		error: (err) => {
 			console.log('error======', err);
