@@ -58,6 +58,14 @@
 
 ## 路由解析
 
+		- docs/stylus: 关于样式整理
+
+		- docs/open: 开源
+			- inx: 脚手架
+			- drag: 拖拽平台
+			- resume: 简历
+			- websocket: 长链接
+
 		- docs/blog: 博客相关
 			- cli: 搭建
 			- plug: 插件
@@ -70,8 +78,6 @@
     	- weChart: 原生小程序集合
     	- harmonyOS: 鸿蒙系统
     	...
-
-    - docs/stylus: 关于样式整理
 
     - docs/platform: 关于平台整理
     	> 前端平台共分为三大模块

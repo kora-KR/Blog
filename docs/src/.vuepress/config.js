@@ -205,6 +205,20 @@ module.exports = {
 					]
 				}
 			],
+			'/open/': [
+				{
+					title: '开源 - 敏捷开发',
+					collapsable: false,
+					children: [
+						{
+							title: '脚手架', path: '', collapsable: false,
+							children: [
+								{ title: 'INX', path: 'inx/inx' },
+							]
+						},
+					]
+				}
+			],
 			'/frame/': [{
 				title: '框架',
 				collapsable: false,
